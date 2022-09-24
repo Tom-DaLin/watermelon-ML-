@@ -28,4 +28,5 @@ jobs:
           method: sha256
           output: checksum.txt
           patterns: |
-            release/*.py
+            ./*.py
+      - run: ll
