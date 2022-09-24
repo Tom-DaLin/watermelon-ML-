@@ -22,11 +22,14 @@ jobs:
       - name: Generate Checksum
         # You may pin to the exact commit or the version.
         # uses: jmgilman/actions-generate-checksum@24a35957fba81c6cbaefeb1e3d59ee56e3db5077
-        uses: jmgilman/actions-generate-checksum@v1.0.0
+        uses: |
+          jmgilman/actions-generate-checksum@v1.0.0
+          actions/upload-artifact@v3
         with:
           # Hashing algorithm to use [md5, sha1, sha256, sha512]
           method: sha256
           output: checksum.txt
           patterns: |
             ./*.py
+          retention-days: 5
       - run: ls
