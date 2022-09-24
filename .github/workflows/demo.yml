@@ -29,4 +29,4 @@ jobs:
           output: checksum.txt
           patterns: |
             ./*.py
-      - run: ll
+      - run: ls
